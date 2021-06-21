@@ -13,7 +13,7 @@ const oldPointStructure = {
   10: ['Q', 'Z']
 };
 
-function oldScrabbleScorer(word) {
+function oldscrabbleScoring(word) {
 	word = word.toUpperCase();
 
 	let letterPoints = "";
@@ -82,7 +82,7 @@ let simpleObject = {
 let scoreObject = {
   name: "Scrabble",
   description: "The traditional scoring algorithm.",
-  scoringFunction: scrabbleScore
+  scoringFunction: scrabbleScoring
 };
 
 let vowelObject = {
@@ -107,7 +107,7 @@ function initialPrompt() {
 };
 
 
-function scrabbleScore(word){
+function scrabbleScoring(word){
   word = word.toUpperCase();
   let points = 0; 
 
@@ -161,7 +161,6 @@ let newPointStructure = transform(oldPointStructure);
 function runProgram() {
   let userWord = initialPrompt();
   console.log("Score for " + userWord + ": " + scorerPrompt().scoringFunction(userWord));
-   
 }
 
 // Don't write any code below this line //
@@ -172,7 +171,7 @@ module.exports = {
    oldPointStructure: oldPointStructure,
    simpleScore: simpleScore,
    vowelBonusScore: vowelBonusScore,
-   scrabbleScore: scrabbleScore,
+   scrabbleScoring: scrabbleScoring,
    scoringAlgorithms: scoringAlgorithms,
    newPointStructure: newPointStructure,
 	runProgram: runProgram,
